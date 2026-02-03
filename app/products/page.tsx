@@ -39,7 +39,7 @@ function ProductsContent() {
             <div className="flex items-center gap-3">
               <img src="/LOGO.png" alt="順發煙火" className="h-16 w-auto" />
               <h1 className="text-lg font-bold text-text-primary tracking-tight">
-                順發煙火
+                煙火批發網
               </h1>
             </div>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-text-secondary">
