@@ -10,6 +10,9 @@ export interface Product {
   name: string;
   categoryId: string;
   price: number;
+  quantity: string;
   image: string;
   slug: string;
+  description?: string;
+  notes?: string;
 }
