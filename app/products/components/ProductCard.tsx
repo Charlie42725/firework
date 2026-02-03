@@ -26,8 +26,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-contain p-4"
-            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+            className="object-contain p-3 sm:p-4"
+            sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center p-6">
@@ -58,27 +58,28 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Info */}
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         <h3
           className="
-            text-sm font-medium text-text-primary leading-snug
-            line-clamp-2 min-h-[2.5rem] mb-2
+            text-xs sm:text-sm font-medium text-text-primary leading-snug
+            line-clamp-2 min-h-[2rem] sm:min-h-[2.5rem] mb-1.5 sm:mb-2
           "
         >
           {product.name}
         </h3>
 
-        <p className="text-xs text-text-muted mb-3">{product.quantity}</p>
+        <p className="text-[11px] sm:text-xs text-text-muted mb-2 sm:mb-3">{product.quantity}</p>
 
         <div className="flex items-end justify-between">
           <div>
-            <span className="text-xs text-text-muted">批發價</span>
-            <p className="text-lg font-bold text-gold">
+            <span className="text-[11px] sm:text-xs text-text-muted">批發價</span>
+            <p className="text-base sm:text-lg font-bold text-gold">
               NT${product.price.toLocaleString()}
             </p>
           </div>
           <span
             className="
+              hidden sm:inline-block
               px-3 py-1.5 text-xs font-medium rounded-lg
               bg-primary-light text-text-secondary
               border border-border

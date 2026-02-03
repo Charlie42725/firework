@@ -24,6 +24,7 @@ export default async function ProductDetailPage({
   }
 
   const category = getCategoryById(product.categoryId);
+  const backUrl = `/products?category=${product.categoryId}`;
   const hasRealImage =
     product.image && !product.image.includes("placeholder");
 
@@ -32,26 +33,12 @@ export default async function ProductDetailPage({
       {/* Header */}
       <header className="border-b border-border bg-primary-dark/50 backdrop-blur-sm sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <Link href="/products" className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                    />
-                  </svg>
-                </div>
+              <Link href={backUrl} className="flex items-center gap-3">
+                <img src="/LOGO.PNG" alt="順發煙火" className="h-16 w-auto" />
                 <h1 className="text-lg font-bold text-text-primary tracking-tight">
-                  煙火批發官網
+                  順發煙火
                 </h1>
               </Link>
             </div>
@@ -63,12 +50,12 @@ export default async function ProductDetailPage({
                 首頁
               </Link>
               <Link
-                href="/products"
+                href={backUrl}
                 className="text-accent-light font-medium"
               >
                 商品目錄
               </Link>
-              <a href="#" className="hover:text-text-primary transition-colors">
+              <a href="/wholesale" className="hover:text-text-primary transition-colors">
                 批發須知
               </a>
               <a href="#" className="hover:text-text-primary transition-colors">
@@ -103,7 +90,7 @@ export default async function ProductDetailPage({
               />
             </svg>
             <Link
-              href="/products"
+              href={backUrl}
               className="hover:text-text-secondary transition-colors"
             >
               商品目錄
@@ -144,7 +131,7 @@ export default async function ProductDetailPage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Back link */}
         <Link
-          href="/products"
+          href={backUrl}
           className="
             inline-flex items-center gap-2 text-sm text-text-muted
             hover:text-text-primary transition-colors mb-8
@@ -369,7 +356,7 @@ export default async function ProductDetailPage({
                 聯絡我們洽詢批發
               </a>
               <Link
-                href="/products"
+                href={backUrl}
                 className="
                   inline-flex items-center justify-center gap-2
                   px-6 py-3 rounded-xl text-sm font-medium
@@ -390,7 +377,7 @@ export default async function ProductDetailPage({
       <footer className="border-t border-border mt-16 bg-primary-dark/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-            <p>煙火批發官網 — 專業煙火批發供應商</p>
+            <p>順發煙火 — 專業煙火批發供應商</p>
             <p>僅供批發商、活動公司、廟會主辦採購，恕不零售</p>
           </div>
         </div>

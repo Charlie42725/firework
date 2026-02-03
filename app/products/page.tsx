@@ -1,41 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useMemo, Suspense } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { categories, getProductsByCategory, getCategoryById } from "@/lib/data";
 import Sidebar from "./components/Sidebar";
 import ProductCard from "./components/ProductCard";
 import MobileCategorySelect from "./components/MobileCategorySelect";
 
-export default function ProductsPage() {
-  const [activeCategoryId, setActiveCategoryId] = useState(categories[0].id);
+function ProductsContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const initialCategory = searchParams.get("category") || categories[0].id;
+  const [activeCategoryId, setActiveCategoryId] = useState(initialCategory);
+
+  const handleCategoryChange = useCallback((id: string) => {
+    setActiveCategoryId(id);
+    router.replace(`/products?category=${id}`, { scroll: false });
+  }, [router]);
+
+  const [sortOrder, setSortOrder] = useState<"default" | "asc" | "desc">("default");
 
   const activeCategory = getCategoryById(activeCategoryId);
   const filteredProducts = getProductsByCategory(activeCategoryId);
+
+  const sortedProducts = useMemo(() => {
+    if (sortOrder === "default") return filteredProducts;
+    return [...filteredProducts].sort((a, b) =>
+      sortOrder === "asc" ? a.price - b.price : b.price - a.price
+    );
+  }, [filteredProducts, sortOrder]);
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b border-border bg-primary-dark/50 backdrop-blur-sm sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
-              </div>
+              <img src="/LOGO.PNG" alt="順發煙火" className="h-16 w-auto" />
               <h1 className="text-lg font-bold text-text-primary tracking-tight">
-                煙火批發官網
+                順發煙火
               </h1>
             </div>
             <nav className="hidden sm:flex items-center gap-6 text-sm text-text-secondary">
@@ -48,7 +52,7 @@ export default function ProductsPage() {
               >
                 商品目錄
               </a>
-              <a href="#" className="hover:text-text-primary transition-colors">
+              <a href="/wholesale" className="hover:text-text-primary transition-colors">
                 批發須知
               </a>
               <a href="#" className="hover:text-text-primary transition-colors">
@@ -121,7 +125,7 @@ export default function ProductsPage() {
           <Sidebar
             categories={categories}
             activeCategoryId={activeCategoryId}
-            onCategoryChange={setActiveCategoryId}
+            onCategoryChange={handleCategoryChange}
           />
 
           {/* Product Content */}
@@ -130,30 +134,48 @@ export default function ProductsPage() {
             <MobileCategorySelect
               categories={categories}
               activeCategoryId={activeCategoryId}
-              onCategoryChange={setActiveCategoryId}
+              onCategoryChange={handleCategoryChange}
             />
 
-            {/* Category Header */}
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-text-primary mb-1">
-                {activeCategory?.name}
-              </h2>
-              <p className="text-sm text-text-muted">
-                共 {filteredProducts.length} 項商品
-              </p>
+            {/* Category Header + Sort */}
+            <div className="flex items-end justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold text-text-primary mb-1">
+                  {activeCategory?.name}
+                </h2>
+                <p className="text-sm text-text-muted">
+                  共 {filteredProducts.length} 項商品
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5">
+                {(["default", "asc", "desc"] as const).map((order) => (
+                  <button
+                    key={order}
+                    onClick={() => setSortOrder(order)}
+                    className={`
+                      px-3 py-1.5 text-xs rounded-lg border cursor-pointer transition-colors
+                      ${sortOrder === order
+                        ? "bg-accent text-white border-accent"
+                        : "bg-surface text-text-secondary border-border hover:border-border-light hover:text-text-primary"
+                      }
+                    `}
+                  >
+                    {order === "default" ? "預設" : order === "asc" ? "價格低→高" : "價格高→低"}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Product Grid */}
             <div
               className="
-                grid gap-4
-                grid-cols-1
-                sm:grid-cols-2
+                grid gap-3 sm:gap-4
+                grid-cols-2
                 md:grid-cols-3
                 xl:grid-cols-4
               "
             >
-              {filteredProducts.map((product) => (
+              {sortedProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
@@ -172,11 +194,19 @@ export default function ProductsPage() {
       <footer className="border-t border-border mt-16 bg-primary-dark/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-            <p>煙火批發官網 — 專業煙火批發供應商</p>
+            <p>順發煙火 — 專業煙火批發供應商</p>
             <p>僅供批發商、活動公司、廟會主辦採購，恕不零售</p>
           </div>
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense>
+      <ProductsContent />
+    </Suspense>
   );
 }
