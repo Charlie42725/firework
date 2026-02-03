@@ -8,12 +8,12 @@ export const categories: Category[] = [
   { id: "box-300", name: "300元以上盒裝煙火", slug: "box-300", productCount: 4 },
   { id: "box-400", name: "400元以上盒裝煙火", slug: "box-400", productCount: 4 },
   { id: "daytime", name: "日間彩煙／雷／彩帶", slug: "daytime", productCount: 6 },
-  { id: "pearl", name: "吐珠升空類煙火批發", slug: "pearl", productCount: 6 },
-  { id: "rocket", name: "沖天炮／火箭類煙火", slug: "rocket", productCount: 5 },
-  { id: "fountain", name: "花筒類煙火批發", slug: "fountain", productCount: 6 },
-  { id: "spinning", name: "旋轉升空類煙火", slug: "spinning", productCount: 5 },
-  { id: "ground", name: "甩炮地面類煙火批發", slug: "ground", productCount: 6 },
-  { id: "temple", name: "廟會煙火批發專區", slug: "temple", productCount: 8 },
+  { id: "pearl", name: "吐珠升空類煙火批發", slug: "pearl", productCount: 10 },
+  { id: "rocket", name: "沖天炮／火箭類煙火", slug: "rocket", productCount: 6 },
+  { id: "fountain", name: "花筒類煙火批發", slug: "fountain", productCount: 18 },
+  { id: "spinning", name: "旋轉升空類煙火", slug: "spinning", productCount: 8 },
+  { id: "ground", name: "甩炮地面類煙火批發", slug: "ground", productCount: 16 },
+  { id: "temple", name: "廟會煙火批發專區", slug: "temple", productCount: 11 },
 ];
 
 export const products: Product[] = [
@@ -99,64 +99,97 @@ export const products: Product[] = [
   { id: "dt-006", name: "七彩煙霧彈（10入）", categoryId: "daytime", quantity: "10入", price: 200, image: "/products/placeholder.jpg", slug: "colorful-smoke-10", description: "七種顏色煙霧彈，適合活動佈景。", notes: "僅限戶外使用，注意風向。" },
 
   // ═══════════════════════════════════════
-  // 吐珠升空類煙火批發
+  // 吐珠升空類煙火批發（7 項真實商品）
   // ═══════════════════════════════════════
-  { id: "pl-001", name: "五連珠升空煙火", categoryId: "pearl", quantity: "1組", price: 120, image: "/products/placeholder.jpg", slug: "five-pearl", description: "五顆珠彈連續升空綻放。", notes: "請在空曠處使用，注意升空方向。" },
-  { id: "pl-002", name: "十連珠大發煙火", categoryId: "pearl", quantity: "1組", price: 200, image: "/products/placeholder.jpg", slug: "ten-pearl", description: "十顆珠彈連續升空，效果壯觀。", notes: "請在空曠處使用，注意升空方向。" },
-  { id: "pl-003", name: "金珠噴射筒（8入）", categoryId: "pearl", quantity: "8入", price: 160, image: "/products/placeholder.jpg", slug: "gold-pearl-8", description: "金色珠彈噴射效果，8入裝。", notes: "請在空曠處使用，注意升空方向。" },
-  { id: "pl-004", name: "彩珠升空組合 25發", categoryId: "pearl", quantity: "1組", price: 280, image: "/products/placeholder.jpg", slug: "color-pearl-25", description: "25發彩色珠彈升空組合。", notes: "請在空曠處使用，注意升空方向。" },
-  { id: "pl-005", name: "銀珠連發煙火 15發", categoryId: "pearl", quantity: "1組", price: 220, image: "/products/placeholder.jpg", slug: "silver-pearl-15", description: "15發銀色珠彈連續發射。", notes: "請在空曠處使用，注意升空方向。" },
-  { id: "pl-006", name: "超級吐珠王 30發", categoryId: "pearl", quantity: "1組", price: 350, image: "/products/placeholder.jpg", slug: "super-pearl-king-30", description: "30發大型吐珠煙火，效果驚人。", notes: "請在空曠處使用，注意升空方向。建議專業人員操作。" },
+  { id: "pl-001", name: "2花-雙響炮", categoryId: "pearl", quantity: "1支", price: 107, image: "/吐珠升空類煙火批發/2花-雙響炮.jpg", slug: "double-flower-cannon", description: "雙響炮吐珠煙火，兩段式升空綻放效果。", notes: "請在空曠處使用，注意升空方向，遠離易燃物品。" },
+  { id: "pl-002", name: "不吐不快（大吐珠炸花）", categoryId: "pearl", quantity: "10支", price: 502, image: "/吐珠升空類煙火批發/不吐不快(大吐珠炸花).jpg", slug: "big-pearl-blast", description: "大型吐珠炸花，10支裝，珠彈升空後炸開綻放，效果震撼。", notes: "請在空曠處使用，注意升空方向，建議專業人員操作。" },
+  { id: "pl-003", name: "祥龍20發吐珠", categoryId: "pearl", quantity: "12支", price: 226, image: "/吐珠升空類煙火批發/祥龍20發吐珠.jpg", slug: "dragon-20-pearl", description: "祥龍系列，每支20發吐珠連射，12支批發裝。", notes: "請在空曠處使用，注意升空方向。" },
+  { id: "pl-004", name: "双泡泡", categoryId: "pearl", quantity: "1支", price: 82, image: "/吐珠升空類煙火批發/双泡泡.jpg", slug: "double-bubble", description: "双泡泡吐珠煙火，獨特泡泡狀升空效果。", notes: "請在空曠處使用，注意升空方向。" },
+  { id: "pl-005", name: "機器戰警二代", categoryId: "pearl", quantity: "1盒", price: 734, image: "/吐珠升空類煙火批發/機器戰警二代.jpg", slug: "robocop-v2", description: "機器戰警二代，高規格吐珠煙火，多發連射效果驚人。", notes: "請在空曠處使用，注意升空方向，建議專業人員操作。" },
+  { id: "pl-006", name: "彩虹吐珠", categoryId: "pearl", quantity: "12支", price: 226, image: "/吐珠升空類煙火批發/彩虹吐珠.jpg", slug: "rainbow-pearl", description: "彩虹色吐珠煙火，12支批發裝，多色交替升空。", notes: "請在空曠處使用，注意升空方向。" },
+  { id: "pl-007", name: "蘋果小高空", categoryId: "pearl", quantity: "1支", price: 82, image: "/吐珠升空類煙火批發/蘋果小高空.webp", slug: "apple-high-altitude", description: "蘋果造型小高空吐珠煙火，升空高度佳。", notes: "請在空曠處使用，注意升空方向。" },
+  { id: "pl-008", name: "30公分全彩紙彩帶", categoryId: "pearl", quantity: "1入", price: 68, image: "/吐珠升空類煙火批發/30公分全彩紙彩帶.jpg", slug: "confetti-30cm", description: "30公分全彩紙彩帶，適合慶典開幕場合。", notes: "使用時注意噴射方向。" },
+  { id: "pl-009", name: "80公分全彩紙彩帶", categoryId: "pearl", quantity: "10支", price: 1020, image: "/吐珠升空類煙火批發/80公分全彩紙彩帶.jpg", slug: "confetti-80cm", description: "80公分大型全彩紙彩帶，10支批發裝，效果壯觀。", notes: "使用時注意噴射方向，適合大型活動。" },
+  { id: "pl-010", name: "煙火加長型噴槍", categoryId: "pearl", quantity: "1入", price: 1020, image: "/吐珠升空類煙火批發/煙火加長型噴槍.jpg", slug: "extended-spray-gun", description: "煙火專用加長型噴槍，安全點火工具。", notes: "請依照使用說明操作。" },
 
   // ═══════════════════════════════════════
-  // 沖天炮／火箭類煙火
+  // 沖天炮／火箭類煙火（6 項真實商品）
   // ═══════════════════════════════════════
-  { id: "rk-001", name: "經典沖天炮（50入）", categoryId: "rocket", quantity: "50入", price: 100, image: "/products/placeholder.jpg", slug: "classic-rocket-50", description: "經典款沖天炮，50入批發裝。", notes: "請在空曠處使用，注意發射方向。" },
-  { id: "rk-002", name: "雙響沖天炮（30入）", categoryId: "rocket", quantity: "30入", price: 120, image: "/products/placeholder.jpg", slug: "double-rocket-30", description: "雙響效果沖天炮，升空後再次爆炸。", notes: "請在空曠處使用，注意發射方向。" },
-  { id: "rk-003", name: "大型火箭煙火（6入）", categoryId: "rocket", quantity: "6入", price: 300, image: "/products/placeholder.jpg", slug: "large-rocket-6", description: "大型火箭煙火，升空高度高，效果壯觀。", notes: "請在空曠處使用，建議專業人員操作。" },
-  { id: "rk-004", name: "五連發火箭筒", categoryId: "rocket", quantity: "1組", price: 250, image: "/products/placeholder.jpg", slug: "five-rocket-tube", description: "五連發火箭筒，連續升空效果。", notes: "請在空曠處使用，固定好發射架後點燃。" },
-  { id: "rk-005", name: "迷你沖天炮（100入）", categoryId: "rocket", quantity: "100入", price: 150, image: "/products/placeholder.jpg", slug: "mini-rocket-100", description: "迷你沖天炮大量裝，適合批量採購。", notes: "請在空曠處使用，注意發射方向。" },
+  { id: "rk-001", name: "風神火箭", categoryId: "rocket", quantity: "12支", price: 258, image: "/沖天炮／火箭類煙火/風神火箭.jpg", slug: "wind-god-rocket", description: "風神系列火箭煙火，升空高度高，火花效果壯觀。", notes: "請在空曠處使用，注意發射方向，遠離易燃物品。" },
+  { id: "rk-002", name: "響叮噹（沖天炮）", categoryId: "rocket", quantity: "96支", price: 136, image: "/沖天炮／火箭類煙火/響叮噹(沖天炮).jpg", slug: "jingle-rocket", description: "經典響叮噹沖天炮，96支批發裝，聲響清脆。", notes: "請在空曠處使用，注意發射方向。" },
+  { id: "rk-003", name: "極速大火箭", categoryId: "rocket", quantity: "6支", price: 258, image: "/沖天炮／火箭類煙火/極速大火箭.jpg", slug: "extreme-speed-rocket", description: "大型火箭煙火，極速升空，爆破效果強烈。", notes: "請在空曠處使用，注意發射方向，建議專業人員操作。" },
+  { id: "rk-004", name: "沖仔", categoryId: "rocket", quantity: "96支", price: 153, image: "/沖天炮／火箭類煙火/沖仔(沖天炮).jpg", slug: "chong-zai-rocket", description: "經典沖仔沖天炮，96支大量批發裝，經濟實惠。", notes: "請在空曠處使用，注意發射方向。" },
+  { id: "rk-005", name: "飛毛腿火箭", categoryId: "rocket", quantity: "12支", price: 258, image: "/沖天炮／火箭類煙火/飛毛腿火箭.jpg", slug: "scud-rocket", description: "飛毛腿系列火箭煙火，飛行軌跡長，視覺效果佳。", notes: "請在空曠處使用，注意發射方向，遠離易燃物品。" },
+  { id: "rk-006", name: "霹靂笛音火箭二代", categoryId: "rocket", quantity: "96支", price: 340, image: "/沖天炮／火箭類煙火/霹靂笛音火箭二代.jpg", slug: "thunder-whistle-rocket-v2", description: "霹靂笛音火箭升級二代，升空時發出獨特笛音，效果震撼。", notes: "請在空曠處使用，注意發射方向。噪音較大，請注意周圍環境。" },
 
   // ═══════════════════════════════════════
-  // 花筒類煙火批發
+  // 花筒類煙火批發（18 項真實商品）
   // ═══════════════════════════════════════
-  { id: "ft-001", name: "金色噴泉花筒 60秒", categoryId: "fountain", quantity: "1支", price: 80, image: "/products/placeholder.jpg", slug: "gold-fountain-60s", description: "金色噴泉效果，持續約60秒。", notes: "請放置於平坦地面使用。" },
-  { id: "ft-002", name: "七彩噴泉花筒 90秒", categoryId: "fountain", quantity: "1支", price: 120, image: "/products/placeholder.jpg", slug: "rainbow-fountain-90s", description: "七彩噴泉效果，持續約90秒。", notes: "請放置於平坦地面使用。" },
-  { id: "ft-003", name: "銀瀑布花筒 120秒", categoryId: "fountain", quantity: "1支", price: 180, image: "/products/placeholder.jpg", slug: "silver-waterfall-120s", description: "銀色瀑布效果，持續約120秒，視覺震撼。", notes: "請放置於平坦地面使用。" },
-  { id: "ft-004", name: "大型花筒組合（3入）", categoryId: "fountain", quantity: "3入", price: 350, image: "/products/placeholder.jpg", slug: "large-fountain-combo", description: "三支大型花筒組合，效果組合豐富。", notes: "請放置於平坦地面使用，預留足夠安全距離。" },
-  { id: "ft-005", name: "迷你花筒（10入）", categoryId: "fountain", quantity: "10入", price: 200, image: "/products/placeholder.jpg", slug: "mini-fountain-10", description: "迷你花筒10入裝，適合小型活動。", notes: "請放置於平坦地面使用。" },
-  { id: "ft-006", name: "巨型花筒煙火 180秒", categoryId: "fountain", quantity: "1支", price: 500, image: "/products/placeholder.jpg", slug: "giant-fountain-180s", description: "巨型花筒，持續約180秒，高度可達數公尺。", notes: "請放置於平坦地面使用，預留足夠安全距離。建議專業人員操作。" },
+  { id: "ft-001", name: "小花筒", categoryId: "fountain", quantity: "24支", price: 264, image: "/花筒類煙火批發/小花筒.jpg", slug: "small-fountain", description: "經典小花筒，24支批發裝，噴花效果穩定。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-002", name: "歡樂派對（兩段式噴花）", categoryId: "fountain", quantity: "10支", price: 298, image: "/花筒類煙火批發/歡樂派對(兩段式噴花).jpg", slug: "party-two-stage", description: "兩段式噴花效果，適合派對慶典使用。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-003", name: "彩色勝利之花", categoryId: "fountain", quantity: "12小盒", price: 213, image: "/花筒類煙火批發/彩色勝利之花.jpg", slug: "victory-flower", description: "彩色勝利之花，12小盒裝，色彩鮮艷。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-004", name: "四季花筒", categoryId: "fountain", quantity: "24支", price: 264, image: "/花筒類煙火批發/四季花筒.jpg", slug: "four-season-fountain", description: "四季主題花筒，24支批發裝，四種色彩變化。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-005", name: "火樹銀花A", categoryId: "fountain", quantity: "12支", price: 298, image: "/花筒類煙火批發/火樹銀花A.jpg", slug: "silver-fire-tree-a", description: "火樹銀花系列，銀色火花如樹般綻放，效果華麗。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-006", name: "海浪", categoryId: "fountain", quantity: "6支", price: 275, image: "/花筒類煙火批發/海浪.jpg", slug: "ocean-wave", description: "海浪造型噴花效果，波浪狀火花起伏。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-007", name: "冷光噴泉3米高30秒長", categoryId: "fountain", quantity: "5支", price: 1000, image: "/花筒類煙火批發/冷光噴泉3米高30秒長.jpg", slug: "cold-fountain-3m", description: "冷光噴泉，噴射高度達3米，持續30秒，適合舞台活動。", notes: "冷光火焰溫度較低但仍需注意安全，請預留足夠距離。" },
+  { id: "ft-008", name: "彩烽舞", categoryId: "fountain", quantity: "6支", price: 275, image: "/花筒類煙火批發/彩烽舞.jpg", slug: "color-beacon-dance", description: "彩色烽火舞動效果，多色交替噴射。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-009", name: "幸運花筒", categoryId: "fountain", quantity: "24支", price: 275, image: "/花筒類煙火批發/幸運花筒.jpg", slug: "lucky-fountain", description: "幸運花筒，24支批發裝，適合節慶祝福場合。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-010", name: "派大星", categoryId: "fountain", quantity: "16支", price: 162, image: "/花筒類煙火批發/派大星.jpg", slug: "patrick-star", description: "派大星造型花筒，16支裝，趣味十足。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-011", name: "浪漫噴泉", categoryId: "fountain", quantity: "6支", price: 275, image: "/花筒類煙火批發/浪漫噴泉.jpg", slug: "romantic-fountain", description: "浪漫噴泉效果，適合婚禮、告白場合。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-012", name: "閃亮亮小花筒", categoryId: "fountain", quantity: "24支", price: 281, image: "/花筒類煙火批發/閃亮亮小花筒.jpg", slug: "shiny-small-fountain", description: "閃亮亮小花筒，24支批發裝，火花閃爍耀眼。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-013", name: "萬花筒", categoryId: "fountain", quantity: "6支", price: 264, image: "/花筒類煙火批發/萬花筒.jpg", slug: "kaleidoscope", description: "萬花筒效果，多色火花旋轉綻放。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-014", name: "小宇宙", categoryId: "fountain", quantity: "24支", price: 275, image: "/花筒類煙火批發/小宇宙.jpg", slug: "little-universe", description: "小宇宙花筒，24支批發裝，火花效果如星空。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-015", name: "招財樹", categoryId: "fountain", quantity: "12支", price: 274, image: "/花筒類煙火批發/招財樹.jpg", slug: "money-tree", description: "招財樹造型花筒，金色火花噴射，吉祥如意。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-016", name: "炫酷小花筒", categoryId: "fountain", quantity: "24支", price: 264, image: "/花筒類煙火批發/炫酷小花筒.jpg", slug: "cool-small-fountain", description: "炫酷小花筒，24支批發裝，效果酷炫。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-017", name: "快樂噴泉", categoryId: "fountain", quantity: "6支", price: 289, image: "/花筒類煙火批發/快樂噴泉.jpg", slug: "happy-fountain", description: "快樂噴泉花筒，噴花效果歡快明亮。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
+  { id: "ft-018", name: "搖錢樹", categoryId: "fountain", quantity: "12支", price: 291, image: "/花筒類煙火批發/搖錢樹.jpg", slug: "fortune-tree", description: "搖錢樹花筒，金色為主的華麗噴花效果。", notes: "請放置於平坦地面使用，遠離易燃物品。" },
 
   // ═══════════════════════════════════════
-  // 旋轉升空類煙火
+  // 旋轉升空類煙火（8 項真實商品）
   // ═══════════════════════════════════════
-  { id: "sn-001", name: "旋轉蜂炮（12入）", categoryId: "spinning", quantity: "12入", price: 90, image: "/products/placeholder.jpg", slug: "spin-bee-12", description: "旋轉蜂炮，地面旋轉後升空。", notes: "請在空曠平坦處使用。" },
-  { id: "sn-002", name: "飛天轉盤煙火", categoryId: "spinning", quantity: "1組", price: 150, image: "/products/placeholder.jpg", slug: "flying-wheel", description: "轉盤式旋轉煙火，旋轉飛天效果。", notes: "請在空曠處使用，注意周圍安全。" },
-  { id: "sn-003", name: "陀螺升空煙火（6入）", categoryId: "spinning", quantity: "6入", price: 120, image: "/products/placeholder.jpg", slug: "gyro-launch-6", description: "陀螺旋轉後升空綻放。", notes: "請在空曠平坦處使用。" },
-  { id: "sn-004", name: "旋風火輪（4入）", categoryId: "spinning", quantity: "4入", price: 200, image: "/products/placeholder.jpg", slug: "fire-wheel-4", description: "火輪旋轉效果，視覺衝擊強烈。", notes: "請在空曠處使用，需固定於支架上。" },
-  { id: "sn-005", name: "升空旋轉組合包", categoryId: "spinning", quantity: "1組", price: 280, image: "/products/placeholder.jpg", slug: "spin-combo", description: "多種旋轉升空煙火組合。", notes: "請在空曠處使用，注意周圍安全。" },
+  { id: "sn-001", name: "大彩蝶", categoryId: "spinning", quantity: "2盒，每盒6支共12支", price: 281, image: "/旋轉升空類煙火/大彩蝶.webp", slug: "big-color-butterfly", description: "大彩蝶旋轉升空煙火，旋轉後如蝴蝶般飛舞升空。", notes: "請在空曠平坦處使用，注意升空方向。" },
+  { id: "sn-002", name: "兩段式彩色大水母", categoryId: "spinning", quantity: "2盒，每盒3隻共6隻", price: 247, image: "/旋轉升空類煙火/兩段式彩色大水母.jpg", slug: "two-stage-jellyfish", description: "兩段式彩色大水母，旋轉升空後展開如水母般的火花。", notes: "請在空曠平坦處使用，注意升空方向。" },
+  { id: "sn-003", name: "彩蝶", categoryId: "spinning", quantity: "24支", price: 155, image: "/旋轉升空類煙火/彩蝶.jpg", slug: "color-butterfly", description: "彩蝶旋轉煙火，24支批發裝，輕巧旋轉升空。", notes: "請在空曠平坦處使用。" },
+  { id: "sn-004", name: "花蝴蝶", categoryId: "spinning", quantity: "24支", price: 112, image: "/旋轉升空類煙火/花蝴蝶.jpg", slug: "flower-butterfly", description: "花蝴蝶旋轉煙火，24支批發裝，經濟實惠。", notes: "請在空曠平坦處使用。" },
+  { id: "sn-005", name: "大蝶飛舞", categoryId: "spinning", quantity: "12支", price: 245, image: "/旋轉升空類煙火/大蝶飛舞.jpg", slug: "big-butterfly-dance", description: "大蝶飛舞，大型旋轉升空煙火，飛舞效果壯觀。", notes: "請在空曠平坦處使用，注意升空方向。" },
+  { id: "sn-006", name: "太空飛碟", categoryId: "spinning", quantity: "24個", price: 277, image: "/旋轉升空類煙火/太空飛碟.jpg", slug: "ufo", description: "太空飛碟造型旋轉煙火，24個批發裝，旋轉飛起效果獨特。", notes: "請在空曠平坦處使用，注意周圍安全。" },
+  { id: "sn-007", name: "魔幻水母", categoryId: "spinning", quantity: "6個", price: 201, image: "/旋轉升空類煙火/魔幻水母.jpg", slug: "magic-jellyfish", description: "魔幻水母旋轉煙火，升空後展開水母造型火花。", notes: "請在空曠平坦處使用，注意升空方向。" },
+  { id: "sn-008", name: "筋斗雲", categoryId: "spinning", quantity: "24入", price: 211, image: "/旋轉升空類煙火/筋斗雲.jpg", slug: "somersault-cloud", description: "筋斗雲旋轉升空煙火，24入批發裝，翻轉升空效果。", notes: "請在空曠平坦處使用。" },
 
   // ═══════════════════════════════════════
-  // 甩炮地面類煙火批發
+  // 甩炮地面類煙火批發（16 項真實商品）
   // ═══════════════════════════════════════
-  { id: "gd-001", name: "摔炮（50盒裝）", categoryId: "ground", quantity: "50盒", price: 100, image: "/products/placeholder.jpg", slug: "snap-50box", description: "經典摔炮，50盒批發裝。", notes: "請勿大量集中引爆，遠離兒童。" },
-  { id: "gd-002", name: "拉炮彩帶（24入）", categoryId: "ground", quantity: "24入", price: 80, image: "/products/placeholder.jpg", slug: "pull-confetti-24", description: "拉炮彩帶，適合派對慶典。", notes: "使用時注意噴射方向。" },
-  { id: "gd-003", name: "地面旋轉煙火（20入）", categoryId: "ground", quantity: "20入", price: 60, image: "/products/placeholder.jpg", slug: "ground-spin-20", description: "地面旋轉效果煙火，20入裝。", notes: "請在平坦地面使用。" },
-  { id: "gd-004", name: "蛇蛋煙火（30入）", categoryId: "ground", quantity: "30入", price: 50, image: "/products/placeholder.jpg", slug: "snake-egg-30", description: "蛇蛋煙火，點燃後膨脹變形。", notes: "會留下殘留物，請注意清理。" },
-  { id: "gd-005", name: "地雷花煙火（12入）", categoryId: "ground", quantity: "12入", price: 150, image: "/products/placeholder.jpg", slug: "ground-mine-12", description: "地雷花效果，地面爆開後噴射火花。", notes: "請在空曠處使用，點燃後迅速遠離。" },
-  { id: "gd-006", name: "跳跳炮（40入）", categoryId: "ground", quantity: "40入", price: 120, image: "/products/placeholder.jpg", slug: "jumping-cracker-40", description: "跳跳炮，點燃後在地面跳動發出聲響。", notes: "請在空曠處使用。" },
+  { id: "gd-001", name: "調皮果", categoryId: "ground", quantity: "24個", price: 155, image: "/甩炮地面類煙火批發/調皮果.jpg", slug: "naughty-fruit", description: "調皮果地面煙火，24個裝，點燃後地面跳動綻放。", notes: "請在空曠處使用，遠離易燃物品。" },
+  { id: "gd-002", name: "彩色甩炮", categoryId: "ground", quantity: "24顆x12小盒", price: 136, image: "/甩炮地面類煙火批發/彩色甩炮.jpg", slug: "color-snap", description: "彩色甩炮，24顆x12小盒批發裝，摔擊即響。", notes: "請勿大量集中使用，遠離兒童。" },
+  { id: "gd-003", name: "鼠太郎", categoryId: "ground", quantity: "8個", price: 129, image: "/甩炮地面類煙火批發/鼠太郎.jpg", slug: "mouse-taro", description: "鼠太郎地面煙火，點燃後在地面快速竄動。", notes: "請在空曠平坦處使用。" },
+  { id: "gd-004", name: "霹靂陀螺", categoryId: "ground", quantity: "12個", price: 194, image: "/甩炮地面類煙火批發/霹靂陀螺.jpg", slug: "thunder-top", description: "霹靂陀螺地面旋轉煙火，12個裝，旋轉效果強烈。", notes: "請在空曠平坦處使用。" },
+  { id: "gd-005", name: "蘋果霹靂珠", categoryId: "ground", quantity: "12小盒", price: 196, image: "/甩炮地面類煙火批發/蘋果霹靂珠.jpg", slug: "apple-thunder-pearl", description: "蘋果造型霹靂珠，12小盒裝，摔擊爆響。", notes: "請勿大量集中使用，遠離兒童。" },
+  { id: "gd-006", name: "三響水鴛鴦", categoryId: "ground", quantity: "20小盒", price: 451, image: "/甩炮地面類煙火批發/三響水鴛鴦.jpg", slug: "triple-mandarin-duck", description: "三響水鴛鴦，20小盒批發裝，三段式連響效果。", notes: "請在空曠處使用，點燃後迅速遠離。" },
+  { id: "gd-007", name: "芭蕾舞", categoryId: "ground", quantity: "24個", price: 97, image: "/甩炮地面類煙火批發/芭蕾舞.jpg", slug: "ballet", description: "芭蕾舞地面旋轉煙火，24個裝，優雅旋轉效果。", notes: "請在空曠平坦處使用。" },
+  { id: "gd-008", name: "水鴛鴦+", categoryId: "ground", quantity: "12小盒", price: 291, image: "/甩炮地面類煙火批發/水鴛鴦+.jpg", slug: "mandarin-duck-plus", description: "水鴛鴦升級版，12小盒批發裝，效果加強。", notes: "請在空曠處使用，點燃後迅速遠離。" },
+  { id: "gd-009", name: "連響珠2", categoryId: "ground", quantity: "12小盒", price: 196, image: "/甩炮地面類煙火批發/連響珠2.jpg", slug: "chain-pearl-2", description: "連響珠二代，12小盒裝，連續爆響效果。", notes: "請在空曠處使用。" },
+  { id: "gd-010", name: "小蝌蚪甩炮", categoryId: "ground", quantity: "24顆x12小盒", price: 122, image: "/甩炮地面類煙火批發/小蝌蚪甩炮.jpg", slug: "tadpole-snap", description: "小蝌蚪甩炮，24顆x12小盒，摔擊即響，經濟實惠。", notes: "請勿大量集中使用，遠離兒童。" },
+  { id: "gd-011", name: "蝌蚪大甩炮", categoryId: "ground", quantity: "15顆x12小盒", price: 139, image: "/甩炮地面類煙火批發/蝌蚪大甩炮.jpg", slug: "big-tadpole-snap", description: "蝌蚪大甩炮，加大版，15顆x12小盒，聲響更強。", notes: "請勿大量集中使用，遠離兒童。" },
+  { id: "gd-012", name: "彩煙芭樂", categoryId: "ground", quantity: "6支", price: 355, image: "/甩炮地面類煙火批發/彩煙芭樂.jpg", slug: "color-smoke-guava", description: "彩煙芭樂，6支裝，點燃後釋放彩色煙霧。", notes: "僅限戶外使用，注意風向。" },
+  { id: "gd-013", name: "便便慧星", categoryId: "ground", quantity: "8個", price: 213, image: "/甩炮地面類煙火批發/便便慧星.jpg", slug: "poop-comet", description: "便便慧星趣味地面煙火，8個裝，造型趣味。", notes: "請在空曠處使用。" },
+  { id: "gd-014", name: "魔幻陀螺", categoryId: "ground", quantity: "12個", price: 211, image: "/甩炮地面類煙火批發/魔幻陀螺.jpg", slug: "magic-top", description: "魔幻陀螺地面旋轉煙火，12個裝，旋轉效果絢麗。", notes: "請在空曠平坦處使用。" },
+  { id: "gd-015", name: "搗蛋", categoryId: "ground", quantity: "12支", price: 136, image: "/甩炮地面類煙火批發/搗蛋.jpg", slug: "mischief", description: "搗蛋地面煙火，12支裝，趣味十足。", notes: "請在空曠處使用。" },
+  { id: "gd-016", name: "霹靂小丸子", categoryId: "ground", quantity: "12小盒", price: 196, image: "/甩炮地面類煙火批發/霹靂小丸子.jpg", slug: "thunder-maruko", description: "霹靂小丸子，12小盒批發裝，小巧爆響效果。", notes: "請勿大量集中使用，遠離兒童。" },
 
   // ═══════════════════════════════════════
-  // 廟會煙火批發專區
+  // 廟會煙火批發專區（11 項真實商品）
   // ═══════════════════════════════════════
-  { id: "tp-001", name: "廟會專用大型煙火組", categoryId: "temple", quantity: "1組", price: 2000, image: "/products/placeholder.jpg", slug: "temple-large-combo", description: "廟會專用大型煙火組合，含多種煙火效果。", notes: "需專業人員施放，請事先申請相關許可。" },
-  { id: "tp-002", name: "廟會排炮 200發", categoryId: "temple", quantity: "1組", price: 1500, image: "/products/placeholder.jpg", slug: "temple-row-200", description: "200發排炮，連續密集發射，氣勢驚人。", notes: "需專業人員施放，請事先申請相關許可。" },
-  { id: "tp-003", name: "神明遶境專用煙火", categoryId: "temple", quantity: "1組", price: 1800, image: "/products/placeholder.jpg", slug: "temple-parade", description: "神明遶境專用煙火套組，含各式必備品項。", notes: "需專業人員施放，請事先申請相關許可。" },
-  { id: "tp-004", name: "廟會蜂炮組合", categoryId: "temple", quantity: "1組", price: 2500, image: "/products/placeholder.jpg", slug: "temple-bee-combo", description: "廟會蜂炮組合，多層蜂炮架設計。", notes: "需專業人員施放，參與者請穿戴護具。" },
-  { id: "tp-005", name: "陣頭專用煙火套組", categoryId: "temple", quantity: "1組", price: 3000, image: "/products/placeholder.jpg", slug: "temple-troupe-set", description: "陣頭表演專用煙火套組，搭配陣頭演出。", notes: "需專業人員施放，請事先申請相關許可。" },
-  { id: "tp-006", name: "慶典大型花筒（10入）", categoryId: "temple", quantity: "10入", price: 3500, image: "/products/placeholder.jpg", slug: "festival-fountain-10", description: "大型慶典用花筒，10入組合，效果壯觀持久。", notes: "需專業人員施放，請預留足夠安全距離。" },
-  { id: "tp-007", name: "廟會連珠炮 500發", categoryId: "temple", quantity: "1組", price: 4000, image: "/products/placeholder.jpg", slug: "temple-chain-500", description: "500發連珠炮，持續時間長，聲勢浩大。", notes: "需專業人員施放，請事先申請相關許可。噪音極大。" },
-  { id: "tp-008", name: "開光專用煙火禮盒", categoryId: "temple", quantity: "1組", price: 1200, image: "/products/placeholder.jpg", slug: "temple-blessing-gift", description: "開光儀式專用煙火禮盒，含精選吉祥煙火組合。", notes: "需專業人員施放，請事先申請相關許可。" },
+  { id: "tp-001", name: "尺炮", categoryId: "temple", quantity: "1入", price: 117.3, image: "/廟會煙火批發專區/尺炮.jpg", slug: "ruler-cannon", description: "傳統尺炮，廟會遶境必備品項。", notes: "需專業人員施放，請事先申請相關許可。噪音極大。" },
+  { id: "tp-002", name: "盒裝尺炮", categoryId: "temple", quantity: "1入", price: 170, image: "/廟會煙火批發專區/盒裝尺炮.jpg", slug: "boxed-ruler-cannon", description: "盒裝尺炮，方便儲存與運送。", notes: "需專業人員施放，請事先申請相關許可。噪音極大。" },
+  { id: "tp-003", name: "20萬頭炮", categoryId: "temple", quantity: "1入", price: 119, image: "/廟會煙火批發專區/20萬頭炮.jpg", slug: "200k-firecracker", description: "20萬頭連環炮，廟會慶典基本款。", notes: "需專業人員施放，請事先申請相關許可。噪音極大。" },
+  { id: "tp-004", name: "30萬頭炮", categoryId: "temple", quantity: "1入", price: 136, image: "/廟會煙火批發專區/30萬頭炮.jpg", slug: "300k-firecracker", description: "30萬頭連環炮，持續時間較長。", notes: "需專業人員施放，請事先申請相關許可。噪音極大。" },
+  { id: "tp-005", name: "50萬頭炮", categoryId: "temple", quantity: "1入", price: 204, image: "/廟會煙火批發專區/50萬頭炮.jpg", slug: "500k-firecracker", description: "50萬頭連環炮，聲勢浩大，適合大型廟會。", notes: "需專業人員施放，請事先申請相關許可。噪音極大。" },
+  { id: "tp-006", name: "100萬頭炮", categoryId: "temple", quantity: "1入", price: 408, image: "/廟會煙火批發專區/100萬頭炮.jpg", slug: "1m-firecracker", description: "100萬頭連環炮，最高規格，持續時間極長，氣勢驚人。", notes: "需專業人員施放，請事先申請相關許可。噪音極大，請預留安全距離。" },
+  { id: "tp-007", name: "環保炮100公分", categoryId: "temple", quantity: "1入", price: 85, image: "/廟會煙火批發專區/環保炮100公分.jpg", slug: "eco-cannon-100cm", description: "環保炮100公分，低煙環保設計。", notes: "需專業人員施放，請事先申請相關許可。" },
+  { id: "tp-008", name: "環保炮200公分", categoryId: "temple", quantity: "1入", price: 212.5, image: "/廟會煙火批發專區/環保炮200公分.jpg", slug: "eco-cannon-200cm", description: "環保炮200公分，低煙環保設計，適合中型場地。", notes: "需專業人員施放，請事先申請相關許可。" },
+  { id: "tp-009", name: "環保炮300公分", categoryId: "temple", quantity: "1入", price: 255, image: "/廟會煙火批發專區/環保炮300公分.jpg", slug: "eco-cannon-300cm", description: "環保炮300公分，低煙環保設計。", notes: "需專業人員施放，請事先申請相關許可。" },
+  { id: "tp-010", name: "環保炮500公分", categoryId: "temple", quantity: "1入", price: 425, image: "/廟會煙火批發專區/環保炮500公分.jpg", slug: "eco-cannon-500cm", description: "環保炮500公分，低煙環保設計，適合大型場地。", notes: "需專業人員施放，請事先申請相關許可。" },
+  { id: "tp-011", name: "環保炮1000公分", categoryId: "temple", quantity: "1入", price: 544, image: "/廟會煙火批發專區/環保炮1000公分.jpg", slug: "eco-cannon-1000cm", description: "環保炮1000公分，最大規格環保炮，適合大型廟會慶典。", notes: "需專業人員施放，請事先申請相關許可。請預留足夠安全距離。" },
 ];
 
 export function getProductsByCategory(categoryId: string): Product[] {
