@@ -37,7 +37,7 @@ function ProductsContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <img src="/LOGO.PNG" alt="順發煙火" className="h-16 w-auto" />
+              <img src="/LOGO.png" alt="順發煙火" className="h-16 w-auto" />
               <h1 className="text-lg font-bold text-text-primary tracking-tight">
                 順發煙火
               </h1>
