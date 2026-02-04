@@ -153,10 +153,11 @@ export default async function ProductDetailPage({
           返回商品列表
         </Link>
 
-        {/* Product Layout: Left Image + Right Info */}
+        {/* Product Layout: Desktop - Left (Image+Name+Price) / Right (Video+Info) */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          {/* Left: Product Image */}
+          {/* Left: Product Image, Name, Price */}
           <div className="lg:w-1/2 xl:w-5/12">
+            {/* Product Image */}
             <div
               className="
                 relative aspect-square bg-white rounded-2xl overflow-hidden
@@ -193,31 +194,101 @@ export default async function ProductDetailPage({
                 </div>
               )}
             </div>
-          </div>
 
-          {/* Right: Product Information Panel */}
-          <div className="lg:w-1/2 xl:w-7/12">
-            {/* Category Tag */}
-            <span className="inline-block text-xs font-medium text-accent-light bg-accent/10 px-3 py-1 rounded-full mb-4">
-              {category?.name}
-            </span>
+            {/* Desktop: Name & Price under image */}
+            <div className="hidden lg:block mt-6">
+              {/* Category Tag */}
+              <span className="inline-block text-xs font-medium text-accent-light bg-accent/10 px-3 py-1 rounded-full mb-4">
+                {category?.name}
+              </span>
 
-            {/* Product Name */}
-            <h1 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4 leading-tight">
-              {product.name}
-            </h1>
+              {/* Product Name */}
+              <h1 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4 leading-tight">
+                {product.name}
+              </h1>
 
-            {/* Price & Quantity */}
-            <div className="flex items-baseline gap-4 mb-8">
-              <div>
-                <span className="text-sm text-text-muted mr-2">批發價</span>
-                <span className="text-3xl font-bold text-gold">
-                  NT${product.price.toLocaleString()}
+              {/* Price & Quantity */}
+              <div className="flex items-baseline gap-4 mb-6">
+                <div>
+                  <span className="text-sm text-text-muted mr-2">批發價</span>
+                  <span className="text-3xl font-bold text-gold">
+                    NT${product.price.toLocaleString()}
+                  </span>
+                </div>
+                <span className="text-sm text-text-muted px-3 py-1 bg-surface rounded-lg border border-border">
+                  {product.quantity}
                 </span>
               </div>
-              <span className="text-sm text-text-muted px-3 py-1 bg-surface rounded-lg border border-border">
-                {product.quantity}
+
+              {/* CTA - Desktop */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="#"
+                  className="
+                    inline-flex items-center justify-center gap-2
+                    px-6 py-3 rounded-xl text-sm font-semibold
+                    bg-accent text-white
+                    hover:bg-accent-light transition-colors
+                  "
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  聯絡我們洽詢批發
+                </a>
+                <Link
+                  href={backUrl}
+                  className="
+                    inline-flex items-center justify-center gap-2
+                    px-6 py-3 rounded-xl text-sm font-medium
+                    bg-surface-light text-text-secondary
+                    border border-border
+                    hover:bg-surface-hover hover:text-text-primary hover:border-border-light
+                    transition-colors
+                  "
+                >
+                  繼續瀏覽商品
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Video + Info (Desktop) / Mobile: Name, Price, Video, Info */}
+          <div className="lg:w-1/2 xl:w-7/12">
+            {/* Mobile only: Category, Name, Price */}
+            <div className="lg:hidden">
+              {/* Category Tag */}
+              <span className="inline-block text-xs font-medium text-accent-light bg-accent/10 px-3 py-1 rounded-full mb-4">
+                {category?.name}
               </span>
+
+              {/* Product Name */}
+              <h1 className="text-2xl font-bold text-text-primary mb-4 leading-tight">
+                {product.name}
+              </h1>
+
+              {/* Price & Quantity */}
+              <div className="flex items-baseline gap-4 mb-6">
+                <div>
+                  <span className="text-sm text-text-muted mr-2">批發價</span>
+                  <span className="text-3xl font-bold text-gold">
+                    NT${product.price.toLocaleString()}
+                  </span>
+                </div>
+                <span className="text-sm text-text-muted px-3 py-1 bg-surface rounded-lg border border-border">
+                  {product.quantity}
+                </span>
+              </div>
             </div>
 
             {/* Video Preview */}
@@ -356,8 +427,8 @@ export default async function ProductDetailPage({
               )}
             </div>
 
-            {/* CTA */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            {/* CTA - Mobile only */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 lg:hidden">
               <a
                 href="#"
                 className="
