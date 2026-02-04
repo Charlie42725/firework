@@ -15,4 +15,5 @@ export interface Product {
   slug: string;
   description?: string;
   notes?: string;
+  videoUrl?: string;
 }

@@ -48,6 +48,19 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           </div>
         )}
+        {/* Video indicator */}
+        {product.videoUrl && (
+          <div className="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-md flex items-center gap-1 text-xs font-medium shadow-lg">
+            <svg
+              className="w-3 h-3"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            影片
+          </div>
+        )}
         {/* Hover overlay */}
         <div
           className="
